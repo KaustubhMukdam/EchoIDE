@@ -1,0 +1,9 @@
+{
+  "name": "echoide-standalone",
+  "version": "0.0.1",
+  "main": "electron.js",
+  "description": "EchoIDE - AI-Powered Code Editor",
+  "devDependencies": {
+    "electron": "^38.1.0"
+  }
+}
