@@ -1,0 +1,150 @@
+/* frontend/src/components/FileTabs.css */
+.file-tabs {
+  height: 36px;
+  background-color: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tabs-container {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 36px;
+  background-color: #2d2d30;
+  border-right: 1px solid #3e3e42;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 120px;
+  max-width: 200px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tab:hover {
+  background-color: #37373d;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  border-bottom: 2px solid #007acc;
+}
+
+.tab.modified::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffa500;
+}
+
+.tab-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.tab-name {
+  flex: 1;
+  color: #cccccc;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab.active .tab-name {
+  color: #ffffff;
+}
+
+.modified-indicator {
+  color: #ffa500;
+  font-size: 16px;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.tab-close {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+  font-size: 12px;
+  transition: all 0.2s;
+  opacity: 0;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab:hover .tab-close {
+  opacity: 1;
+}
+
+.tab-close:hover {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.tabs-actions {
+  padding: 0 8px;
+  border-left: 1px solid #3e3e42;
+}
+
+.new-tab-btn {
+  background: none;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.new-tab-btn:hover {
+  background-color: #37373d;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tab {
+    min-width: 100px;
+    max-width: 150px;
+    padding: 0 8px;
+  }
+  
+  .tab-name {
+    font-size: 12px;
+  }
+  
+  .tab-close {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EchoIDE Small Icons Generator</title>
+    <style>
+        .icon-generator {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .icon-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* 64x64 Icon */
+        .icon-64 {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #007acc 0%, #00d4ff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto 15px;
+            cursor: pointer;
+        }
+        .icon-64 .rocket { font-size: 28px; }
+        .icon-64 .ai-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background: #28a745;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 6px;
+            font-size: 8px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        /* 32x32 Icon */
+        .icon-32 {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #007acc 0%, #00d4ff 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto 15px;
+            cursor: pointer;
+        }
+        .icon-32 .rocket { font-size: 16px; }
+        .icon-32 .ai-badge {
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            background: #28a745;
+            color: white;
+            padding: 1px 2px;
+            border-radius: 3px;
+            font-size: 6px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        /* 16x16 Icon */
+        .icon-16 {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #007acc 0%, #00d4ff 100%);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto 15px;
+            cursor: pointer;
+        }
+        .icon-16 .rocket { font-size: 10px; }
+        .icon-16 .ai-badge {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background: #28a745;
+            color: white;
+            padding: 0px 1px;
+            border-radius: 2px;
+            font-size: 4px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .download-btn {
+            margin: 10px 5px;
+            padding: 8px 16px;
+            background: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .download-btn:hover {
+            background: #005a9e;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h3 {
+            color: #007acc;
+            margin-bottom: 15px;
+        }
+        
+        .instructions {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 EchoIDE Small Icons Generator</h1>
+    
+    <div class="instructions">
+        <strong>Instructions:</strong><br>
+        1. Right-click on any icon below<br>
+        2. Select "Save image as..." or "Copy image"<br>
+        3. Save with the exact filename shown (e.g., "icon-16x16.png")<br>
+        4. Place all files in your <code>frontend/public/</code> folder
+    </div>
+    
+    <div class="icon-generator">
+        <div class="icon-container">
+            <h3>64x64 Icon</h3>
+            <div class="icon-64" id="icon64">
+                <div class="rocket">🚀</div>
+                <div class="ai-badge">AI</div>
+            </div>
+            <button class="download-btn" onclick="downloadIcon('icon64', 64, 'icon-64x64.png')">
+                Download icon-64x64.png
+            </button>
+            <br><small>For Windows shortcuts & Mac dock</small>
+        </div>
+        
+        <div class="icon-container">
+            <h3>32x32 Icon</h3>
+            <div class="icon-32" id="icon32">
+                <div class="rocket">🚀</div>
+                <div class="ai-badge">AI</div>
+            </div>
+            <button class="download-btn" onclick="downloadIcon('icon32', 32, 'icon-32x32.png')">
+                Download icon-32x32.png
+            </button>
+            <br><small>For Windows taskbar & explorer</small>
+        </div>
+        
+        <div class="icon-container">
+            <h3>16x16 Icon</h3>
+            <div class="icon-16" id="icon16">
+                <div class="rocket">🚀</div>
+                <div class="ai-badge">AI</div>
+            </div>
+            <button class="download-btn" onclick="downloadIcon('icon16', 16, 'icon-16x16.png')">
+                Download icon-16x16.png
+            </button>
+            <br><small>For browser tabs & system tray</small>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px;">
+        <h3>✅ Complete Icon Checklist:</h3>
+        <p>After downloading, you should have these files in <code>frontend/public/</code>:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>✅ icon-16x16.png</li>
+            <li>✅ icon-32x32.png</li>
+            <li>✅ icon-64x64.png</li>
+            <li>✅ icon-128x128.png (you already have)</li>
+            <li>✅ icon-256x256.png (you already have)</li>
+            <li>✅ icon-512x512.png (you already have)</li>
+            <li>✅ icon.png (copy of 512x512)</li>
+        </ul>
+    </div>
+
+    <script>
+        function downloadIcon(elementId, size, filename) {
+            // Check if html2canvas is available
+            if (typeof html2canvas === 'undefined') {
+                alert('Please right-click on the icon and select "Save image as..." to download.');
+                return;
+            }
+            
+            const element = document.getElementById(elementId);
+            html2canvas(element, {
+                width: size,
+                height: size,
+                scale: 4, // Higher scale for better quality
+                backgroundColor: null
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(err => {
+                console.error('Error generating image:', err);
+                alert('Please right-click on the icon and select "Save image as..." to download.');
+            });
+        }
+        
+        // Add right-click context menu hint
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('.icon-16, .icon-32, .icon-64')) {
+                console.log('Right-click detected on icon - perfect for saving!');
+            }
+        });
+    </script>
+    
+    <!-- Optional: Include html2canvas for download functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

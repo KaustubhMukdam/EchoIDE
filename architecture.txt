@@ -1,0 +1,163 @@
+EchoIDE/
+├── frontend/                    # Electron + React
+│   ├── src/
+│   └── package.json
+├── backend/                     # Python backend
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py             # FastAPI app
+│   │   ├── routers/
+│   │   │   ├── ai.py           # AI endpoints
+│   │   │   ├── files.py        # File operations
+│   │   │   └── project.py      # Project management
+│   │   ├── services/
+│   │   │   ├── ai_service.py   # Ollama integration
+│   │   │   ├── code_analysis.py
+│   │   │   └── file_service.py
+│   │   └── models/             # Pydantic models
+│   ├── requirements.txt
+│   └── run.py
+└── shared/                      # Shared types/schemas
+
+# Test your current models with different configurations
+ollama run llama3.2:3b          # Smaller, faster version
+ollama run mistral:7b-instruct  # Good for coding tasks
+ollama run qwen2.5:7b          # Balanced performance
+
+# For coding specifically, try these smaller specialized models:
+ollama pull deepseek-coder:6.7b  # Excellent for code generation
+ollama pull codellama:7b         # Meta's coding model
+ollama pull phi3.5:mini          # Microsoft's efficient 3.8B model
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Phase 1: Frontend Architecture Setup
+1. Choose Your Frontend Stack
+You have two main options:
+
+Option A: Electron + React (Recommended for Desktop App)
+
+bash
+# Create React app for the frontend
+cd ../  # Go back to EchoIDE root
+npx create-react-app frontend
+cd frontend
+npm install electron electron-builder
+npm install axios  # For API calls
+Option B: Web-First (React + Later Package as Desktop)
+
+bash
+npx create-react-app frontend
+cd frontend
+npm install axios react-router-dom
+2. Setup Project Structure
+text
+EchoIDE/
+├── backend/           # ✅ Done - Your Python FastAPI
+├── frontend/          # 🔄 Next - React app
+│   ├── src/
+│   │   ├── components/
+│   │   ├── services/  # API calls to backend
+│   │   └── App.js
+└── README.md
+Phase 2: Core Frontend Features (Week 1-2)
+3. Build Essential Components
+A. API Service Layer
+
+javascript
+// frontend/src/services/api.js
+const API_BASE = 'http://127.0.0.1:8000';
+
+export const aiService = {
+  chat: (message, model, language, context, sessionId) => {
+    return fetch(`${API_BASE}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message, model, language, context, session_id: sessionId
+      })
+    }).then(res => res.json());
+  },
+  
+  analyzeCode: (code, language, analysisType) => {
+    return fetch(`${API_BASE}/api/code/analyze`, {
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, language, analysis_type: analysisType })
+    }).then(res => res.json());
+  }
+  // Add other endpoints...
+};
+B. Core UI Components
+
+Chat Interface - AI conversation panel
+
+Code Editor - Monaco Editor integration
+
+File Explorer - Tree view of project files
+
+Status Bar - Show current model, file info
+
+4. Integrate Monaco Editor
+bash
+npm install @monaco-editor/react
+Phase 3: Advanced Features (Week 3-4)
+5. Add Professional Editor Features
+Syntax highlighting for multiple languages
+
+Code completion using your AI endpoint
+
+File tabs for multiple open files
+
+Search and replace
+
+Split view for multiple panes
+
+6. AI Integration
+Inline code suggestions (like GitHub Copilot)
+
+Chat-based coding assistant
+
+Code analysis on save
+
+Smart error detection
+
+Phase 4: Polish & Package (Week 5-6)
+7. Desktop App Packaging
+bash
+# If using Electron
+npm install --save-dev electron-packager
+npm run build
+npm run electron-pack
+8. Advanced Features
+Themes (dark/light mode)
+
+Settings panel (model selection, preferences)
+
+Plugin system (extensions)
+
+Git integration
+
+# Development mode
+npm run dev
+
+# Build for production
+npm run build
+npm run electron
+
+# Create distributable
+npm run dist
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📁 frontend/public/
+├── 📄 icon-16x16.png      (Windows taskbar, small)
+├── 📄 icon-32x32.png      (Windows taskbar, medium)  
+├── 📄 icon-48x48.png      (Windows explorer)
+├── 📄 icon-64x64.png      (Windows shortcuts)
+├── 📄 icon-128x128.png    (Mac dock, small)
+├── 📄 icon-256x256.png    (Mac dock, large)
+├── 📄 icon-512x512.png    (Mac retina, main)
+├── 📄 icon.png            (512x512 - main icon)
+├── 📄 icon.ico            (Windows format - all sizes combined)
+└── 📄 icon.icns           (Mac format - all sizes combined)
