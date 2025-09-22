@@ -1,6 +1,10 @@
-# EchoIDE - AI-Powered Code Editor
+# ⚡ Project 4/20 – EchoIDE: AI-Powered Code Editor
+
+*Part of my **100 Days of Code – Portfolio Project Series*** 
 
 🚀 **EchoIDE** is a modern, AI-powered desktop code editor and integrated development environment (IDE) built with React, Electron, and FastAPI. It supports multi-language syntax highlighting, intelligent AI code completion, integrated terminal, and real-time code execution for Python, JavaScript, and more.
+
+🔗 **GitHub Repo**: [EchoIDE](https://github.com/KaustubhMukdam/EchoIDE.git)  
 
 ---
 
@@ -28,9 +32,7 @@
 
 ## Demo Video
 
-![EchoIDE Demo](./docs/echoide-demo.gif)
-
-(Include a visual demo here—for LinkedIn and GitHub showcase)
+![EchoIDE Demo](./demo.mp4)
 
 ---
 
@@ -94,6 +96,20 @@ EchoIDE/
 └── LICENSE
 ---
 
+📚 Learning Outcomes
+
+Architecting a full-stack desktop application with AI integration
+
+Designing for cross-platform compatibility
+
+Improving developer experience (DX) with smart editor features
+
+Packaging desktop apps using Electron-builder
+
+Lessons in software architecture & UX design
+
+---
+
 ## Contributing
 
 Contributions are welcome!
@@ -110,10 +126,16 @@ This project is licensed under the MIT License.
 
 ---
 
-## Contact
+## 👨‍💻 Author
 
-Kaustubh — [Your Email]  
-Project Link: https://github.com/yourusername/echoide
+### Kaustubh Mukdam
+
+GitHub: [@KaustubhMukdam](https://github.com/KaustubhMukdam)
+
+LinkedIn: [Kaustubh Mukdam](https://www.linkedin.com/in/kaustubh-mukdam-ab0170340/)
+---
+
+## ⭐ If you liked this project, please give it a star!
 
 ---
 
