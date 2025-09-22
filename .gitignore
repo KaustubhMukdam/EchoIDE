@@ -129,3 +129,6 @@ gradle/
 
 # Markdown plugin cache
 .cache/
+
+#demo video
+.mp4

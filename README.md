@@ -32,7 +32,7 @@
 
 ## Demo Video
 
-![EchoIDE Demo](./demo.mp4)
+![EchoIDE Demo](https://drive.google.com/file/d/1fB5Z8MJveUcab5oLuAyj4ue_L1V70N9W/view?usp=sharing)
 
 ---
 
